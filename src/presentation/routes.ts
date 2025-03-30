@@ -16,7 +16,6 @@ export class AppRoutes {
 
     router.use('/api/tickets', TicketRoutes.routes);
 
-
     return router;
   }
 }
