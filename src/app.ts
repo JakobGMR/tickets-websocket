@@ -14,11 +14,13 @@ function main() {
 
   const server = new Server({
     port: envs.PORT,
-    routes: AppRoutes.routes,
+    // routes: AppRoutes.routes,
   });
 
   const httpServer = createServer(server.app);
   WssService.initWss({server: httpServer, })
+
+  server.setRoutes(AppRoutes.routes);
 
   // server.start();
   httpServer.listen(envs.PORT, ()=>{
